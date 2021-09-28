@@ -15,22 +15,28 @@ Kumpulan data yang sudah dibersihkan berisi informasi :
 - tax = Road Tax
 - mpg = Miles per Galon
 - engineSize= size in litres
-  
+
+### Permasalahan
+- tahun 2021 maraknya jumlah pembelian kendaraan mobil karena kasus covid di dunia mulai menurun sehingga pemerintah memperbolehkan para pekerja untuk membolehkan aktivitas keluar rumah dan wisata, oleh karena itu perlunya prediksi harga jual mobil Volswagen untuk meningkatkan pembelian kendaraan dengan harga terbaik dengan menggunakan model yang kuat.
+
 Pada bagian ini, Anda menguraikan secara singkat informasi mengenai pilihan domain yang akan diselesaikan permasalahannya. 
 Sebagai contoh, Anda memilih domain telekomunikasi. Anda dapat menguraikan bagian ini dengan pendekatan berikut:
 - Sertakan informasi atau latar belakang yang relevan mengenai pemilihan domain ini.
 - Jelaskan mengapa dan bagaimana masalah dalam domain yang Anda pilih tersebut harus diselesaikan.
 - Sertakan pula hasil riset terkait atau referensi yang relevan. Anda dapat menggunakan [tautan](https://scholar.google.com/) untuk menuliskan referensi atau rujukan.
 
+Referensi data : https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes
+
 ## Business Understanding
 Bagian ini menjelaskan proses klarifikasi masalah dan mengajukan minimal satu solusi untuk menyelesaikan permasalahan. Bagian laporan ini mencakup:
 
 ### Problem Statements
 Tuliskan problem statement Anda di sini. Anda dapat menggunakan kalimat tanya untuk mendefinisikan bagian ini.
+- model regresi mana yang dapat menghasilkan prediksi terbaik?
 
 ### Goals
 Tuliskan dan jelaskan goal proyek yang ingin Anda capai di bagiani ini. Anda dapat menggunakan bullet point jika memiliki lebih dari satu goals proyek.
-
+- ingin mencari model regresi yang kuat dan dapat memprediksi harga jual mobil VolkSwagen.
 ### Solution statements
 Sampaikan solusi yang Anda ajukan untuk menyelesaikan permasalahan di sini. Misalnya, Anda mengajukan dua algoritma machine learning sebagai solusi permasalahan, yaitu Random Forest dan Boosting Algorithm. Jelaskan secara singkat mengenai kedua algoritma ini. 
 Sebagai contoh:
