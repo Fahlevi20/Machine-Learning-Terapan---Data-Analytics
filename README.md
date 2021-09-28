@@ -38,11 +38,13 @@ Tuliskan problem statement Anda di sini. Anda dapat menggunakan kalimat tanya un
 Tuliskan dan jelaskan goal proyek yang ingin Anda capai di bagiani ini. Anda dapat menggunakan bullet point jika memiliki lebih dari satu goals proyek.
 - ingin mencari model regresi yang kuat dan dapat memprediksi harga jual mobil VolkSwagen.
 ### Solution statements
-Sampaikan solusi yang Anda ajukan untuk menyelesaikan permasalahan di sini. Misalnya, Anda mengajukan dua algoritma machine learning sebagai solusi permasalahan, yaitu Random Forest dan Boosting Algorithm. Jelaskan secara singkat mengenai kedua algoritma ini. 
-Sebagai contoh:
-- **Random Forest**. Kalimat selanjutnya menjelaskan informasi atau cara kerja algoritma ini. Selain itu, dapat juga Anda tambahkan kelebihan dan kekurangan algoritma ini.
-- **Boosting Algorithm**. Sama dengan di atas. 
-
+Solusi model yang kami berikan menggunakan Linear dan Polynomial, karena dengan metode tersebut cocok untuk melakukan prediksi terkait harga. 
+Untuk model yang digunakan :
+- **Linear Model**. Model linier adalah cara untuk menggambarkan variabel respon dalam hal kombinasi linier variabel prediktor. Respon harus berupa variabel kontinu dan paling tidak terdistribusi secara normal. 
+- **Polynomial Model**. Model polinomial adalah alat yang hebat untuk menentukan faktor input mana yang mendorong respons dan ke arah mana. Ini juga merupakan model yang paling umum digunakan untuk analisis eksperimen yang dirancang. Model polinomial kuadratik (orde kedua) untuk dua variabel penjelas memiliki bentuk persamaan di bawah ini. 
+- **LinearRegression**. Linear Regression cocok dengan model linier dengan koefisien w = (w1, …, wp) untuk meminimalkan jumlah sisa kuadrat antara target yang diamati dalam                             kumpulan data, dan target yang diprediksi oleh pendekatan linier. 
+- **DecisionTreeRegressor**. Decision Tree Regressor. Decision Tree membangun model regresi atau klasifikasi dalam bentuk struktur pohon. Ini memecah dataset menjadi subset yang lebih kecil dan lebih kecil sementara pada saat yang sama pohon keputusan terkait dikembangkan secara bertahap. Hasil akhirnya adalah pohon dengan simpul keputusan dan simpul daun. 
+- **MLPRegressor**. Multi Layer Perceiptron Regressor. Model ini mengoptimalkan kesalahan kuadrat menggunakan LBFGS atau penurunan gradien stokastik.
 ## Data Understanding
 Paragraf awal bagian ini menjelaskan informasi mengenai data yang Anda gunakan dalam proyek. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
 
@@ -52,7 +54,16 @@ Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
 - accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
 - cuisine : merupakan jenis masakan yang disajikan pada restoran.
 - dst
-
+Semua variabel yang terdapat di Dataset vw (Volkswagen Dataset) :
+- model = Volswagen Model(T-Rock, Golf, Polo, T-Cross, Tiguan, Caddy, Etc..)
+- year = Registration Year
+- price = Price in Pound Britania (£)
+- transmission = type of gearbox (Automatic, Manual and Semi-Auto)
+- mileage = distance used
+- fuelType = Engine Fuel (Diesel, Petrol, Hybird and Other)
+- tax = Road Tax
+- mpg = Miles per Galon
+- engineSize= size in litres
 ## Data Preparation
 Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Preparation. 
 - Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
