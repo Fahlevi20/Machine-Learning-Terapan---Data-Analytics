@@ -66,8 +66,14 @@ Semua variabel yang terdapat di Dataset vw (Volkswagen Dataset) :
 - engineSize= size in litres
 ## Data Preparation
 Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Preparation. 
-- Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
+- **Exploratory Data Analysis (EDA)**. Exploratory Data Analysis adalah pendekatan untuk menganalisis kumpulan data untuk merangkum karakteristik utamanya, seringkali dengan metode visual. EDA digunakan untuk melihat apa yang data dapat memberitahu kami sebelum tugas pemodelan. dengan EDA dapat mudah untuk melakukan analisis data dengan cepat.
+  - Disini saya menganalisis jumlah dari baris dan kolom yaitu sebanyak 15157 dan 9 kolom.
+-  **Data Cleaning/Cleansing**. Pembersihan data (Data Cleaning/Cleansing) adalah proses memperbaiki atau menghapus data yang salah, rusak, salah format, duplikat, atau tidak lengkap dalam kumpulan data. Saat menggabungkan beberapa sumber data, ada banyak peluang untuk data diduplikasi atau diberi label yang salah.
+    - disini kita melakukan data Cleaning untuk memeriksa apakah ada data yang kosong, lalu mendrop kolom yang tidak penting seperti mendrop Kolom Year, ini dilakukan karena kolom tahun akan berpengaruh dalam prediksi harga sehingga saya mendrop kolom tersebut dan menggantinya dengan feature engineering. 
+                             
+-  Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
 - Jelaskan alasan mengapa Anda perlu menerapkan teknik tersebut pada tahap Data Preparation. 
+- list item
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
