@@ -2,6 +2,20 @@
 # Laporan Proyek Machine Learning - Mukhammad Fahlevi Ali Rafsanjani
 
 ## Domain Proyek
+### Latar Belakang
+
+10.000 daftar mobil bekas yang dipisahkan menjadi beberapa file sesuai dengan masing-masing produsen mobil.
+Kumpulan data yang sudah dibersihkan berisi informasi :
+- model = Volswagen Model(T-Rock, Golf, Polo, T-Cross, Tiguan, Caddy, Etc..)
+- year = Registration Year
+- price = Price in Pound Britania (£)
+- transmission = type of gearbox (Automatic, Manual and Semi-Auto)
+- mileage = distance used
+- fuelType = Engine Fuel (Diesel, Petrol, Hybird and Other)
+- tax = Road Tax
+- mpg = Miles per Galon
+- engineSize= size in litres
+  
 Pada bagian ini, Anda menguraikan secara singkat informasi mengenai pilihan domain yang akan diselesaikan permasalahannya. 
 Sebagai contoh, Anda memilih domain telekomunikasi. Anda dapat menguraikan bagian ini dengan pendekatan berikut:
 - Sertakan informasi atau latar belakang yang relevan mengenai pemilihan domain ini.
