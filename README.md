@@ -118,9 +118,29 @@ Insight yang saya dapatkan saat melakukan EDA:
   
 ## Evaluation
 Bagian ini menjelaskan mengenai metrik evaluasi yang digunakan untuk mengukur kinerja model. Sebagai contoh, Anda memiih kasus klasifikasi dan menggunakan metrik **akurasi, precision, recall, dan F1 score**. Jelaskan mengenai beberapa hal berikut:
-- Penjelasan mengenai metrik yang digunakan dan bagaimana formulanya
-- Kelebihan dan kekurangan metrik
-- Bagaimana cara menerapkannya ke dalam kode.
+- R-Squared (coefficient of determination).
+ -Disini saya menggunakan Metric Evaluation yaitu R^2_score atau R-squared. R-Squared itu sendiri adalah skor terbaik yang mungkin adalah 1,0 dan bisa negatif (karena modelnya bisa sewenang-wenang lebih buruk). Sebuah model konstan yang selalu memprediksi nilai yang diharapkan dari y, mengabaikan fitur input, akan mendapatkan skor 0,0.
+  - untuk persamaannya seperti ini
+ 
+    - ![img](http://www.sciweavers.org/tex2img.php?eq=R%5E2%28y%2C%20%5Chat%7By%7D%29%20%3D%201%20-%20%5Cfrac%7B%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%28y_i%20-%20%5Chat%7By%7D_i%29%5E2%7D%7B%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%28y_i%20-%20%5Cbar%7By%7D%29%5E2%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)
+- **Kelebihannya**
+  - dapat memprediksi hasil di masa depan atau pengujian hipotesis , berdasarkan informasi terkait lainnya.
+  - memberikan ukuran seberapa baik hasil yang diamati direplikasi oleh model, berdasarkan proporsi variasi total hasil yang dijelaskan oleh model.
+  - sangat cocok untuk metrics akurasi pada model Regresi.
+- **Kekurangan**
+  - tidak menunjukan apakah regresi yang benar digunakan
+  - tidak dapat memberitahu apakah model tersebut overfit/underfit dan lainnya.
+- **Code**
+- untuk codenya yang diterapkan:
+- def regression_model(model):
+    regressor = model
+    regressor.fit(X_train_transformed, Y_train)
+    score = regressor.score(X_test_transformed, Y_test)
+    return regressor, score
+- ada juga menggunakan library dari sklearn.metrics:
+- r2_score=(y_test,y_pred)
+
+  - Bagaimana cara menerapkannya ke dalam kode.
 
 Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
 
