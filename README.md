@@ -66,11 +66,32 @@ Semua variabel yang terdapat di Dataset vw (Volkswagen Dataset) :
 - engineSize= size in litres
 ## Data Preparation
 Pada bagian ini Anda menjelaskan teknik yang digunakan pada tahapan Data Preparation. 
-- **Exploratory Data Analysis (EDA)**. Exploratory Data Analysis adalah pendekatan untuk menganalisis kumpulan data untuk merangkum karakteristik utamanya, seringkali dengan metode visual. EDA digunakan untuk melihat apa yang data dapat memberitahu kami sebelum tugas pemodelan. dengan EDA dapat mudah untuk melakukan analisis data dengan cepat.
-  - Disini saya menganalisis jumlah dari baris dan kolom yaitu sebanyak 15157 dan 9 kolom.
+- **Exploratory Data Analysis (EDA)**. Exploratory Data Analysis adalah pendekatan untuk menganalisis kumpulan data untuk merangkum karakteristik utamanya, seringkali dengan metode visual. EDA digunakan untuk melihat apa yang data dapat memberitahu kami sebelum tugas pemodelan. dengan EDA dapat mudah untuk melakukan analisis data dengan cepat.        
+Insight yang saya dapatkan saat melakukan EDA:
+
+  - Mengetahui jumlah dari baris dan kolom yaitu sebanyak 15157 dan 9 kolom
+  - Mengetahui semua kolom
+  - dapat mengetahui Mean, Modus, dan nilai minimum
+  - Mengetahui tipe data tiap masing-masing variabel
+  - Memeriksa Data yang Unik
 -  **Data Cleaning/Cleansing**. Pembersihan data (Data Cleaning/Cleansing) adalah proses memperbaiki atau menghapus data yang salah, rusak, salah format, duplikat, atau tidak lengkap dalam kumpulan data. Saat menggabungkan beberapa sumber data, ada banyak peluang untuk data diduplikasi atau diberi label yang salah.
     - disini kita melakukan data Cleaning untuk memeriksa apakah ada data yang kosong, lalu mendrop kolom yang tidak penting seperti mendrop Kolom Year, ini dilakukan karena kolom tahun akan berpengaruh dalam prediksi harga sehingga saya mendrop kolom tersebut dan menggantinya dengan feature engineering. 
-                             
+-  **Data Visualization**. Visualisasi data adalah proses menerjemahkan kumpulan data besar dan metrik ke dalam bagan, grafik, dan visual lainnya. Dengan Visualisasi Data mempermudah membaca informasi yang banyak dan angka - angka melalui angka.                                                                                                        Insight yang saya dapatkan saat melakukan Visualisasi Data:
+    - Transmission
+      - lebih banyak yang menggunakan Manual transmission dibanding menggunakan Semi-Auto dan juga Automatic
+      - pengguna Automatic paling sedikit digunakan
+      - lebih banyak yang menggunakan Semi-Auto ketimbang Automatic                              
+    - FuelType
+      - Bensin Petrol yang paling banyak digunakan
+      - Bensin Diesel merupakan yang paling banyak kedua.
+      - yang menggunakan merek bensin lain selain Diesel dan Petrol ataupun Hybrid jarang sekali.
+    - Total Pembelian Mobil VolkSwagen Terbanyak
+      - Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
+    - Jumlah Pembelian mobil tiap Tahun
+      - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
+    - Pair Plot
+      - disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
+
 -  Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
 - Jelaskan alasan mengapa Anda perlu menerapkan teknik tersebut pada tahap Data Preparation. 
 - list item
