@@ -77,22 +77,28 @@ Insight yang saya dapatkan saat melakukan EDA:
 -  **Data Cleaning/Cleansing**. Pembersihan data (Data Cleaning/Cleansing) adalah proses memperbaiki atau menghapus data yang salah, rusak, salah format, duplikat, atau tidak lengkap dalam kumpulan data. Saat menggabungkan beberapa sumber data, ada banyak peluang untuk data diduplikasi atau diberi label yang salah.
     - disini kita melakukan data Cleaning untuk memeriksa apakah ada data yang kosong, lalu mendrop kolom yang tidak penting seperti mendrop Kolom Year, ini dilakukan karena kolom tahun akan berpengaruh dalam prediksi harga sehingga saya mendrop kolom tersebut dan menggantinya dengan feature engineering. 
 -  **Data Visualization**. Visualisasi data adalah proses menerjemahkan kumpulan data besar dan metrik ke dalam bagan, grafik, dan visual lainnya. Dengan Visualisasi Data mempermudah membaca informasi yang banyak dan angka - angka melalui angka.                                                                                                        Insight yang saya dapatkan saat melakukan Visualisasi Data:
-    - Transmission
+    - **Transmission**
       - lebih banyak yang menggunakan Manual transmission dibanding menggunakan Semi-Auto dan juga Automatic
       - pengguna Automatic paling sedikit digunakan
       - lebih banyak yang menggunakan Semi-Auto ketimbang Automatic                              
-    - FuelType
+    - **FuelType**
       - Bensin Petrol yang paling banyak digunakan
       - Bensin Diesel merupakan yang paling banyak kedua.
       - yang menggunakan merek bensin lain selain Diesel dan Petrol ataupun Hybrid jarang sekali.
-    - Total Pembelian Mobil VolkSwagen Terbanyak
+    - **Total Pembelian Mobil VolkSwagen Terbanyak**
       - Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
-    - Jumlah Pembelian mobil tiap Tahun
+    - **Jumlah Pembelian mobil tiap Tahun**
       - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
-    - Pair Plot
+    - **Pair Plot**
       - disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
-
--  Terapkan minimal satu teknik data preparation dan jelaskan proses yang dilakukan.
+- **Data Preprocessing**. Pra-pemrosesan data adalah proses mengubah data mentah menjadi format yang dapat dipahami. Ini juga merupakan langkah penting dalam penambangan data karena tidak dapat bekerja dengan data mentah. Disini saya melakukan preprocessing data agar data tersebut dapat diolah dan diproses dengan baik sehingga menghindari underfit atau overfit.
+  - **Normalisasi**. Disini saya melakukan Normalisasi data agar data yang dilatih dan data yang di test akan mudah untuk mencocokan data karena memiliki nilai dan tipe data yang sama. untuk Normalisasi data saya menggunakan Stndar Scaler.
+    - **StandardScaler**. StandardScaler menstandardisasi fitur dengan mengurangi mean dan kemudian menskalakan ke varians unit. Varians unit berarti membagi semua nilai dengan standar deviasi. alasan saya menggunakan StandardScaler karena tujuannya untuk memprediksi harga sehingga StandardScaler lebih baik dibandingkan MinMaxScaler yang nilainya 0 dan 1.
+   - **Splitting Data Train dan Test**
+      - disini saya membagi data menjadi data train dan test secara default yaitu 75% data train dan 25% data latih
+   
+-  Terapkan minimal satu teknik data preparati
+- Disini saya melakukan preprocessing data untuk agar  -on dan jelaskan proses yang dilakukan.
 - Jelaskan alasan mengapa Anda perlu menerapkan teknik tersebut pada tahap Data Preparation. 
 - list item
 
