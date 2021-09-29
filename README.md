@@ -103,8 +103,13 @@ Insight yang saya dapatkan saat melakukan EDA:
 - list item
 
 ## Modeling
-Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan. 
-
+- Bagian Modelling saya menggunakan Linear Regression, Decision Tree Regressor dan MLP Regressor. untuk modellingnya sendiri saya membandingkan ketiga model tersebut untuk mencari model mana yang lebih baik.
+- ![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+  - **Menggunakan Linear Model**. Pertama saya menggunakan Model Linear untuk mendapatkan akurasi terbaik.
+    - **Linear Regression(Linear)** . Saat menggunakan model Linear Regression mendapatkan akurasi yang baik yaitu sebesar 	0.929033
+    - **Decision Tree Regressor(Linear)**. Saat menggunakan model Decision Tree Regressor mendapatkan akurasi yang sangat baik yaitu sebesar 0.952657
+    - **MLP Regressor(Linear**. Saat menggunakan model MLP Regressor mendapatkan akurasi yang baik yaitu sebesar 0.937266 
+- untuk
 Jelaskan bagaimana Anda melakukan proses modeling dalam proyek. Misalnya, Anda menggunakan satu algoritma kemudian melakukan improvement dari baseline model atau Anda menggunakan dua atau lebih algoritma kemudian membandingkan performanya.
 
 Sajikan model terbaik Anda sebagai solusi.
