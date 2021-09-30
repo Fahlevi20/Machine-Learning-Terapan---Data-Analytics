@@ -7,12 +7,11 @@
 
 
 ### Permasalahan
-- tahun 2021 maraknya jumlah pembelian kendaraan mobil karena kasus covid di dunia mulai menurun sehingga pemerintah memperbolehkan para pekerja untuk membolehkan aktivitas keluar rumah dan wisata, oleh karena itu perlunya prediksi harga jual mobil Volswagen untuk meningkatkan pembelian kendaraan dengan harga terbaik dengan menggunakan model yang kuat.
-
+- Banyak sekali model regresi yang baik untuk digunakan untuk melakukan prediksi harga, tetapi bagaimana jika membandingkan semua model untuk mencari akurasi tertinggi. 
 
 Reference      : 
-https://otomotif.antaranews.com/berita/2279530/tren-pembelian-kendaraan-secara-digital-terus-meningkat
-https://www.researchgate.net/publication/227576328_MAKING_THE_DECISION_ON_BUYING_SECOND-HAND_CAR_MARKET_USING_DATA_MINING_TECHNIQUES
+- [tren-pembelian-kendaraan-secara-digital-terus-meningkat ](https://otomotif.antaranews.com/berita/2279530/tren-pembelian-kendaraan-secara-digital-terus-meningkat)
+- [MAKING THE DECISION ON BUYING SECOND HAND CAR MARKET USING DATA MINING TECHNIQUES](https://www.researchgate.net/publication/227576328_MAKING_THE_DECISION_ON_BUYING_SECOND-HAND_CAR_MARKET_USING_DATA_MINING_TECHNIQUES)
 
 ## Business Understanding
 
