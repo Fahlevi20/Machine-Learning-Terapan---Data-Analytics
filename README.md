@@ -86,12 +86,12 @@ Insight yang saya dapatkan saat melakukan EDA:
 ## Modeling
 - Bagian Modelling saya menggunakan Linear Regression, Decision Tree Regressor dan MLP Regressor. untuk modellingnya sendiri saya membandingkan ketiga model tersebut untuk mencari model mana yang lebih baik.
   - **Menggunakan Linear Model**. Pertama saya menggunakan Model Linear untuk mendapatkan akurasi terbaik.
-  - ![Menggunakan Linear Model](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/model/model%20linear.jpg?raw=true)
+  - ![Menggunakan Linear Model](https://user-images.githubusercontent.com/64582353/135480973-cd596327-7e06-408c-80a3-714020d0414e.png)
     - **Linear Regression(Linear)** . Saat menggunakan model Linear Regression mendapatkan akurasi yang baik yaitu sebesar 	0.929033
     - **Decision Tree Regressor(Linear)**. Saat menggunakan model Decision Tree Regressor mendapatkan akurasi yang sangat baik yaitu sebesar 0.952657
     - **MLP Regressor(Linear)**. Saat menggunakan model MLP Regressor mendapatkan akurasi yang baik yaitu sebesar 0.937266 
   - **Menggunakan Polynomial Model**. Kedua saya mencoba menggunakan Model Polynomial untuk mengetahui apakah dapat menambah akurasi atau tidak. dan hasilnya dibawah:
-  - ![Menggunakan Polynomial Model](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/model/model%20polynomial.jpg?raw=true)
+  - ![Menggunakan Polynomial Model](https://user-images.githubusercontent.com/64582353/135481143-de649c2f-79d3-4abb-8cf7-f784087a3d03.png)
     - **Linear Regression(Polynomial)** . Saat menggunakan model Linear Regression mendapatkan akurasi yang baik yaitu sebesar 0.929033
     - **Decision Tree Regressor(Polynomial)**. Saat menggunakan model Decision Tree Regressor mendapatkan akurasi yang sangat baik yaitu sebesar 0.953241
     - **MLP Regressor(Polynomial)**. Saat menggunakan model MLP Regressor mendapatkan akurasi yang baik yaitu sebesar 0.947744 
