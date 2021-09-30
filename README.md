@@ -4,17 +4,7 @@
 ## Domain Proyek
 ### Latar Belakang
 
-10.000 daftar mobil bekas yang dipisahkan menjadi beberapa file sesuai dengan masing-masing produsen mobil.
-Kumpulan data yang sudah dibersihkan berisi informasi :
-- model 
-- year 
-- price 
-- transmission 
-- mileage
-- fuelType 
-- tax 
-- mpg 
-- engineSize
+
 
 ### Permasalahan
 - tahun 2021 maraknya jumlah pembelian kendaraan mobil karena kasus covid di dunia mulai menurun sehingga pemerintah memperbolehkan para pekerja untuk membolehkan aktivitas keluar rumah dan wisata, oleh karena itu perlunya prediksi harga jual mobil Volswagen untuk meningkatkan pembelian kendaraan dengan harga terbaik dengan menggunakan model yang kuat.
