@@ -3,7 +3,7 @@
 
 ## Domain Proyek
 ### Latar Belakang
-
+10.000 daftar mobil bekas yang dipisahkan menjadi beberapa file sesuai dengan masing-masing produsen mobil.
 
 
 ### Permasalahan
@@ -16,7 +16,7 @@ Reference      :
 ## Business Understanding
 
 ### Problem Statements
-- model regresi mana yang dapat menghasilkan prediksi terbaik?
+- Membandingkan semua model untuk mencari akurasi tertinggi
 
 ### Goals
 ingin mencari model regresi yang kuat dan dapat memprediksi harga jual mobil VolkSwagen.
