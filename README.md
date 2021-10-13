@@ -2,24 +2,17 @@
 # Laporan Proyek Machine Learning - Mukhammad Fahlevi Ali Rafsanjani
 
 ## Domain Proyek
+Project Machine Learning Terapan : membuat model Predictive Analysis, menggunakan dataset yang berdomain ekonomi mengenai prediksi harga mobil VolkSwagen.
 ### Latar Belakang
-10.000 daftar mobil bekas yang dipisahkan menjadi beberapa file sesuai dengan masing-masing produsen mobil.
-
-
-### Permasalahan
-- Banyak sekali model regresi yang baik untuk digunakan untuk melakukan prediksi harga, tetapi bagaimana jika membandingkan semua model untuk mencari akurasi tertinggi. 
-
-Reference      : 
-- [tren-pembelian-kendaraan-secara-digital-terus-meningkat ](https://otomotif.antaranews.com/berita/2279530/tren-pembelian-kendaraan-secara-digital-terus-meningkat)
-- [MAKING THE DECISION ON BUYING SECOND HAND CAR MARKET USING DATA MINING TECHNIQUES](https://www.researchgate.net/publication/227576328_MAKING_THE_DECISION_ON_BUYING_SECOND-HAND_CAR_MARKET_USING_DATA_MINING_TECHNIQUES)
+Latar Belakang pemilihan topik ini adalah dikarenakan ingin melihat tingkat penjualan mobil bekas, dimana dalam kasus ini VolkSwagen, dengan fitur - fitur tertentu yang dapat berpenaguh pada nilai di pasar.
 
 ## Business Understanding
-
+Pentingnya bagi para pemilik mobil jika ingin menjual mobilnya perlu untuk melihat harga yang terdapat di pasaran, namun bagi para penjual cukup sulit untuk menentukan harga mobilnya agar mendapatkan harga yang sesuai keinginannya dan juga dapat terjual dengan mudah, oleh karena itu pembuatan prediksi harga yang cocok penting.
 ### Problem Statements
-- Membandingkan semua model untuk mencari akurasi tertinggi
-
+-Berapa harga mobil bekas dengan jenis transmisi, jarak tempuh dan ukuran mesin yang ditentukan?
+- berdasarkan karakteristik yang tersedia manakan yang paling berpengaruh?
 ### Goals
-ingin mencari model regresi yang kuat dan dapat memprediksi harga jual mobil VolkSwagen.
+ingin membuat model Machine Learning yang dapat memberikan prediksi harga mobil bekas VolkSwagen dengan harga terbaik dan menggunakan karaktersitik yang tersedia.
 ### Solution statements
 Solusi model yang kami berikan menggunakan Linear dan Polynomial, karena dengan metode tersebut cocok untuk melakukan prediksi terkait harga. 
 Untuk model yang digunakan :
