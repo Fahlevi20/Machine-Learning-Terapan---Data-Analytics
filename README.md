@@ -74,9 +74,44 @@ Dataset tersebut juga dapat dilihat deskripsi statistiknya seperti berikut:
 |75%   |  2019.000000|  20998.000000|   31824.000000|    145.000000 |    60.100000|   
 |max   |  2020.000000|  69994.000000|  212000.000000|    580.000000 |   188.300000|   
 
+#### Visualization Data
 
+Apabila jenis data dikategorikan seperti diatas dapat dilihat bentuk tabel dan grafik masing masing data sebagai berikut:
+
+Informasi General Dataset ...
+|count|unique|top|freq|
+|:---:|:---:|:---:|:---:|
+|15157|3|Manual|9417|
+
+![Transmission](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Transmission.jpg?token=APMXFUPIEKV4O5IVT4GL5DTBNFHG2)
+
+|count|unique|top|freq|
+|:---:|:---:|:---:|:---:|
+|15157|4|Petrol|8553|
+
+![fuelType](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Barplot%20fuelType.jpg?token=APMXFUIR5A3SVXM7JNHSXRLBNFHXY)
+
+ **Total Pembelian Mobil VolkSwagen Terbanyak**
+  Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
+    ![3 mobil terbanyak](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Data%20Visualization/terbanyak.png?token=APMXFUJSMID2KDVWT6LA7ODBNFICA)
+
+  **Jumlah Pembelian mobil tiap Tahun**
+      - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
+      ![peningkatan pembelian pertahun](https://user-images.githubusercontent.com/64582353/135224122-d465c32a-55d3-49ca-b48c-2f2bd6db63b8.png)
+
+  **Pair Plot**
+    disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
+      
+   ![Pair Plot](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/pairplot.jpg?token=APMXFUJCYNUFJ34Y5ZO3EQDBNFLG2)
+      
 ## Data Preparation
-- **Exploratory Data Analysis (EDA)**. Exploratory Data Analysis adalah pendekatan untuk menganalisis kumpulan data untuk merangkum karakteristik utamanya, seringkali dengan metode visual. EDA digunakan untuk melihat apa yang data dapat memberitahu kami sebelum tugas pemodelan. dengan EDA dapat mudah untuk melakukan analisis data dengan cepat.        
+- **Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
+#### Train-Test Split
+Proses splitting data atau pembagian dataset menjadi data latih *(train)* dan data uji *(test)* merupakan hal yang harus dilakukan sebelum melakukan pemodelan supervised. Hal ini karena data uji berperan sebagai data baru yang benar-benar belum pernah dilihat oleh model sebelumnya sehingga informasi yang terdapat pada data uji tidak mengotori informasi yang terdapat pada data latih, alasan lain mengapa menggunakan *train test split* karena untuk efisiensi dan tidak melakukan *data leakage* ketika melakukan scaling. 
+
+#### Standardisasi
+Data numerik yang terdapat di dataset perlu dilakukannya proses **Standardisasi** sehingga menghasilkan distribusi dengan nilai standar deviasi 1 dan mean 0. Hal tersebut dilakukan dengan tujuan untuk meningkatkan peforma algoritma machine learning dan membuatnya konvergen lebih cepat selain itu menghindari overfitting dan juga data imbalance.
+
 Insight yang saya dapatkan saat melakukan EDA:
 
   - Mengetahui jumlah dari baris dan kolom yaitu sebanyak 15157 dan 9 kolom
@@ -87,21 +122,11 @@ Insight yang saya dapatkan saat melakukan EDA:
 -  **Data Cleaning/Cleansing**. Pembersihan data (Data Cleaning/Cleansing) adalah proses memperbaiki atau menghapus data yang salah, rusak, salah format, duplikat, atau tidak lengkap dalam kumpulan data. Saat menggabungkan beberapa sumber data, ada banyak peluang untuk data diduplikasi atau diberi label yang salah.
     - disini kita melakukan data Cleaning untuk memeriksa apakah ada data yang kosong, lalu mendrop kolom yang tidak penting seperti mendrop Kolom Year, ini dilakukan karena kolom tahun akan berpengaruh dalam prediksi harga sehingga saya mendrop kolom tersebut dan menggantinya dengan feature engineering. 
 -  **Data Visualization**. Visualisasi data adalah proses menerjemahkan kumpulan data besar dan metrik ke dalam bagan, grafik, dan visual lainnya. Dengan Visualisasi Data mempermudah membaca informasi yang banyak dan angka - angka melalui angka.                                                                                                        Insight yang saya dapatkan saat melakukan Visualisasi Data:
-    - **Transmission**
-      - lebih banyak yang menggunakan Manual transmission dibanding menggunakan Semi-Auto dan juga Automatic
-      - pengguna Automatic paling sedikit digunakan
-      - lebih banyak yang menggunakan Semi-Auto ketimbang Automatic
-      ![transmission](https://user-images.githubusercontent.com/64582353/135224464-525210d1-bf5c-4e3b-95dd-a74b27de02d7.png)
-                        
-    - **FuelType**
-      - Bensin Petrol yang paling banyak digunakan
-      - Bensin Diesel merupakan yang paling banyak kedua.
-      - yang menggunakan merek bensin lain selain Diesel dan Petrol ataupun Hybrid jarang sekali.
-      ![FuelType](https://user-images.githubusercontent.com/64582353/135223859-deceb779-7bb6-4af1-b80e-df20a83fbc0d.png)
+    
 
     - **Total Pembelian Mobil VolkSwagen Terbanyak**
       - Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
-      ![3 mobil terbanyak](https://user-images.githubusercontent.com/64582353/135224014-6de54bb5-9e0f-4c26-91c3-40ebbced79a4.png)
+      ![3 mobil terbanyak](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Data%20Visualization/terbanyak.png?token=APMXFUJSMID2KDVWT6LA7ODBNFICA)
 
     - **Jumlah Pembelian mobil tiap Tahun**
       - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
