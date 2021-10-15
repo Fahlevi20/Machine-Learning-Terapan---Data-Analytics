@@ -22,7 +22,9 @@ Untuk model yang digunakan :
 - **DecisionTreeRegressor**. Decision Tree Regressor. Decision Tree membangun model regresi atau klasifikasi dalam bentuk struktur pohon. Ini memecah dataset menjadi subset yang lebih kecil dan lebih kecil sementara pada saat yang sama pohon keputusan terkait dikembangkan secara bertahap. Hasil akhirnya adalah pohon dengan simpul keputusan dan simpul daun. 
 - **MLPRegressor**. Multi Layer Perceiptron Regressor. Model ini mengoptimalkan kesalahan kuadrat menggunakan LBFGS atau penurunan gradien stokastik.
 ## Data Understanding
- Untuk mengunduh Dataset dapat mengunjungi link berikut [Kaggle Dataset](https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes).
+ 
+Untuk mengunduh Dataset dapat mengunjungi link berikut [Kaggle Dataset](https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes).
+Disini menggunakan [*100,000 UK Used Car Data set*](https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes?select=cclass.csv) dari situs Kaggle yang berisi data tentang mobil bekas yang terjual di UK dengan variable, mileage, model, engineSize, year, transmission, fuelType, dan price yang menjadi label pada data ini. Dataset ini berisi  3899 dengan 7 kolom dengan 2 kategorikal dan 5 numerikal.
  
 Variabel - variabel yang terdapat di Dataset vw (Volkswagen Dataset) :
 - model = Volswagen Model(T-Rock, Golf, Polo, T-Cross, Tiguan, Caddy, Etc..)
@@ -34,6 +36,45 @@ Variabel - variabel yang terdapat di Dataset vw (Volkswagen Dataset) :
 - tax = Road Tax
 - mpg = Miles per Galon
 - engineSize= size in litres
+
+Data Loading sebagai berikut
+
+|model           |year|price|transmission|mileage|fuelType|tax|mpg  |engineSize|
+|----------------|----|-----|------------|-------|--------|---|-----|----------|
+| T-Roc          |2019|25000|Automatic   |13904  |Diesel  |145|49.6 |2.0       |
+| T-Roc          |2019|26883|Automatic   |4562   |Diesel  |145|49.6 |2.0       |
+| T-Roc          |2019|20000|Manual      |7414   |Diesel  |145|50.4 |2.0       |
+| T-Roc          |2019|33492|Automatic   |4825   |Petrol  |145|32.5 |2.0       |
+| T-Roc          |2019|22900|Semi-Auto   |6500   |Petrol  |150|39.8 |1.5       |
+| T-Roc          |2020|31895|Manual      |10     |Petrol  |145|42.2 |1.5       |
+| T-Roc          |2020|27895|Manual      |10     |Petrol  |145|42.2 |1.5       |
+| T-Roc          |2020|39495|Semi-Auto   |10     |Petrol  |145|32.5 |2.0       |
+| T-Roc          |2019|21995|Manual      |10     |Petrol  |145|44.1 |1.0       |
+| T-Roc          |2019|23285|Manual      |10     |Petrol  |145|42.2 |1.5       |
+|---|---|---|---|---|---|---|---|---|
+| Eos            |2015|12495|Manual      |41850  |Diesel  |125|58.9 |2.0       |
+| Eos            |2014|8950 |Manual      |58000  |Diesel  |125|58.9 |2.0       |
+| Eos            |2006|2995 |Manual      |92640  |Diesel  |200|48.0 |2.0       |
+| Eos            |2012|5990 |Manual      |74000  |Diesel  |125|58.9 |2.0       |
+| Fox            |2008|1799 |Manual      |88102  |Petrol  |145|46.3 |1.2       |
+| Fox            |2009|1590 |Manual      |70000  |Petrol  |200|42.0 |1.4       |
+| Fox            |2006|1250 |Manual      |82704  |Petrol  |150|46.3 |1.2       |
+| Fox            |2007|2295 |Manual      |74000  |Petrol  |145|46.3 |1.2       |
+
+Dataset tersebut juga dapat dilihat deskripsi statistiknya seperti berikut:
+
+|               year|         price|        mileage|           tax  |        mpg| 
+|------|-------------|------------------------------|---------------|------------|
+|count | 15157.000000|  15157.000000|   15157.000000|  15157.000000 | 15157.000000|   
+|mean  |  2017.255789|  16838.952365|   22092.785644|    112.744277 |    53.753355|   
+|std   |     2.053059|   7755.015206|   21148.941635|     63.482617 |    13.642182|   
+|min   |  2000.000000|    899.000000|       1.000000|      0.000000 |     0.300000|   
+|25%   |  2016.000000|  10990.000000|    5962.000000|     30.000000 |    46.300000|   
+|50%   |  2017.000000|  15497.000000|   16393.000000|    145.000000 |    53.300000|   
+|75%   |  2019.000000|  20998.000000|   31824.000000|    145.000000 |    60.100000|   
+|max   |  2020.000000|  69994.000000|  212000.000000|    580.000000 |   188.300000|   
+
+
 ## Data Preparation
 - **Exploratory Data Analysis (EDA)**. Exploratory Data Analysis adalah pendekatan untuk menganalisis kumpulan data untuk merangkum karakteristik utamanya, seringkali dengan metode visual. EDA digunakan untuk melihat apa yang data dapat memberitahu kami sebelum tugas pemodelan. dengan EDA dapat mudah untuk melakukan analisis data dengan cepat.        
 Insight yang saya dapatkan saat melakukan EDA:
