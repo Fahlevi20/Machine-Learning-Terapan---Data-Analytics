@@ -83,26 +83,26 @@ Informasi General Dataset ...
 |:---:|:---:|:---:|:---:|
 |15157|3|Manual|9417|
 
-![Transmission](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Transmission.jpg)
+![Transmission](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/Transmission.jpg?raw=true)
 
 |count|unique|top|freq|
 |:---:|:---:|:---:|:---:|
 |15157|4|Petrol|8553|
 
-![fuelType](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/Barplot%20fuelType.jpg)
+![fuelType](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/Barplot%20fuelType.jpg?raw=true)
 
  **Total Pembelian Mobil VolkSwagen Terbanyak**
   Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
-    ![3 mobil terbanyak](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/terbanyak.png)
+    ![3 mobil terbanyak](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/terbanyak.png?raw=true)
 
   **Jumlah Pembelian mobil tiap Tahun**
       - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
-      ![peningkatan pembelian pertahun](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pertahun.png)
+      ![peningkatan pembelian pertahun](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pertahun.png?raw=true)
 
   **Pair Plot**
     disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
       
-   ![Pair Plot](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pairplot.jpg)
+   ![Pair Plot](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pairplot.jpg?raw=true)
       
 ## Data Preparation
 - Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
