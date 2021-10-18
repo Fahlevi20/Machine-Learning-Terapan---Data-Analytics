@@ -83,7 +83,7 @@ Informasi General Dataset ...
 |:---:|:---:|:---:|:---:|
 |15157|3|Manual|9417|
 
-![Transmission](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Data%20Visualization/Transmission.jpg?token=APMXFUOYLUOCS6TFANBWXUTBNT6LG)
+![Transmission](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Transmission.jpg)
 
 |count|unique|top|freq|
 |:---:|:---:|:---:|:---:|
@@ -105,23 +105,13 @@ Informasi General Dataset ...
    ![Pair Plot](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pairplot.jpg)
       
 ## Data Preparation
-- **Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
+- Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
 #### Train-Test Split
 Proses splitting data atau pembagian dataset menjadi data latih *(train)* dan data uji *(test)* merupakan hal yang harus dilakukan sebelum melakukan pemodelan supervised. Hal ini karena data uji berperan sebagai data baru yang benar-benar belum pernah dilihat oleh model sebelumnya sehingga informasi yang terdapat pada data uji tidak mengotori informasi yang terdapat pada data latih, alasan lain mengapa menggunakan *train test split* karena untuk efisiensi dan tidak melakukan *data leakage* ketika melakukan scaling. 
 
 #### Standardisasi
 Data numerik yang terdapat di dataset perlu dilakukannya proses **Standardisasi** sehingga menghasilkan distribusi dengan nilai standar deviasi 1 dan mean 0. Hal tersebut dilakukan dengan tujuan untuk meningkatkan peforma algoritma machine learning dan membuatnya konvergen lebih cepat selain itu menghindari overfitting dan juga data imbalance.
 
-Insight yang saya dapatkan saat melakukan EDA:
-
-  - Mengetahui jumlah dari baris dan kolom yaitu sebanyak 15157 dan 9 kolom
-  - Mengetahui semua kolom
-  - dapat mengetahui Mean, Modus, dan nilai minimum
-  - Mengetahui tipe data tiap masing-masing variabel
-  - Memeriksa Data yang Unik
--  **Data Cleaning/Cleansing**. Pembersihan data (Data Cleaning/Cleansing) adalah proses memperbaiki atau menghapus data yang salah, rusak, salah format, duplikat, atau tidak lengkap dalam kumpulan data. Saat menggabungkan beberapa sumber data, ada banyak peluang untuk data diduplikasi atau diberi label yang salah.
-    - disini kita melakukan data Cleaning untuk memeriksa apakah ada data yang kosong, lalu mendrop kolom yang tidak penting seperti mendrop Kolom Year, ini dilakukan karena kolom tahun akan berpengaruh dalam prediksi harga sehingga saya mendrop kolom tersebut dan menggantinya dengan feature engineering. 
- 
  ```python
 scaler=StandardScaler()
 df_scaler=scaler.fit_transform(df_new)
@@ -131,11 +121,7 @@ print(df_scaler.shape)
 X=df_scaler.drop(columns=['price'])
 y=df_scaler['price']
 ``` 
-  - **Normalisasi**. Disini saya melakukan Normalisasi data agar data yang dilatih dan data yang di test akan mudah untuk mencocokan data karena memiliki nilai dan tipe data yang sama. untuk Normalisasi data saya menggunakan Stndar Scaler.
-    - **StandardScaler**. StandardScaler menstandardisasi fitur dengan mengurangi mean dan kemudian menskalakan ke varians unit. Varians unit berarti membagi semua nilai dengan standar deviasi. alasan saya menggunakan StandardScaler karena tujuannya untuk memprediksi harga sehingga StandardScaler lebih baik dibandingkan MinMaxScaler yang nilainya 0 dan 1.
-   - **Splitting Data Train dan Test**
-      - disini saya membagi data menjadi data train dan test secara default yaitu 75% data train dan 25% data latih
-   
+
 ## Modeling
 - Pada Proyek yang dibuat, digunakan model algoritma *Machine Learning* yaitu **Linear Regression**,**Decision Tree Regressor**, dan **Multi Layer Perceptron Regressor**. Model tersebut dipilih dikarenakan permasalahan dari model *Machine Learning* yang dibuat adalah permasalahan regresi. hasil dari model yang dipilih akan dibandingkan berdasarkan label yang telah terpilih sebelmunya yaitu *price*. Berikut adalah potongan kode dari model tersebut.
  ```python
@@ -159,8 +145,17 @@ for model in models_to_evaluate:
 
 model_performance
 ```
+|No|Features|	Model|	Score|
+|:---:|:---:|:---:|:---:|
+|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
+|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.952657|
+|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	0.937266|
+
+
 lalu sekarang melihat model dalam bentuk Polynomial untuk mencari nilai K
+
 ```python
+#polynomial
 poly = PolynomialFeatures()
 X_train_transformed_poly = poly.fit_transform(X_train)
 X_test_transformed_poly = poly.transform(X_test)
@@ -180,11 +175,7 @@ for k in range(10, 277, 5):
     
 sns.lineplot(x = no_of_features, y = r_squared)
 ```
-|No|Features|	Model|	Score|
-|:---:|:---:|:---:|:---:|
-|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
-|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.952657|
-|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	0.937266|
+
 ```python
 selector = SelectKBest(f_regression, k = 110)
 X_train_transformed = selector.fit_transform(X_train_transformed_poly, Y_train)
@@ -225,17 +216,5 @@ Dari Tabel dapat dilihat bahwa nilai *RF* lebih mendekati dengan nilai aslinya, 
   - tidak dapat memberitahu apakah model tersebut overfit/underfit dan lainnya.
 - **Code**
 - untuk codenya yang diterapkan:
-```python
-def regression_model(model):
-    regressor = model
-    regressor.fit(X_train_transformed, Y_train)
-    score = regressor.score(X_test_transformed, Y_test)
-    return regressor, score
- ```![Uploading fuelType.png…]()
 
- - ada juga menggunakan library dari sklearn.metrics:
-```javascript
-from sklearn.metrics import r2_score
-r2_score(y_test,y_pred)
-```
 - Dengan menggunakan R2_score dapat memberikan hasil yang baik sebsar 0.953241
