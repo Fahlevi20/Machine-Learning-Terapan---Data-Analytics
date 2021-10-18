@@ -83,26 +83,26 @@ Informasi General Dataset ...
 |:---:|:---:|:---:|:---:|
 |15157|3|Manual|9417|
 
-![Transmission](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Transmission.jpg?token=APMXFUPIEKV4O5IVT4GL5DTBNFHG2)
+![Transmission](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Data%20Visualization/Transmission.jpg?token=APMXFUOYLUOCS6TFANBWXUTBNT6LG)
 
 |count|unique|top|freq|
 |:---:|:---:|:---:|:---:|
 |15157|4|Petrol|8553|
 
-![fuelType](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Barplot%20fuelType.jpg?token=APMXFUIR5A3SVXM7JNHSXRLBNFHXY)
+![fuelType](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/Barplot%20fuelType.jpg)
 
  **Total Pembelian Mobil VolkSwagen Terbanyak**
   Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
-    ![3 mobil terbanyak](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Data%20Visualization/terbanyak.png?token=APMXFUJSMID2KDVWT6LA7ODBNFICA)
+    ![3 mobil terbanyak](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/terbanyak.png)
 
   **Jumlah Pembelian mobil tiap Tahun**
       - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
-      ![peningkatan pembelian pertahun](https://user-images.githubusercontent.com/64582353/135224122-d465c32a-55d3-49ca-b48c-2f2bd6db63b8.png)
+      ![peningkatan pembelian pertahun](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pertahun.png)
 
   **Pair Plot**
     disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
       
-   ![Pair Plot](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/pairplot.jpg?token=APMXFUJCYNUFJ34Y5ZO3EQDBNFLG2)
+   ![Pair Plot](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pairplot.jpg)
       
 ## Data Preparation
 - **Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
@@ -121,43 +121,95 @@ Insight yang saya dapatkan saat melakukan EDA:
   - Memeriksa Data yang Unik
 -  **Data Cleaning/Cleansing**. Pembersihan data (Data Cleaning/Cleansing) adalah proses memperbaiki atau menghapus data yang salah, rusak, salah format, duplikat, atau tidak lengkap dalam kumpulan data. Saat menggabungkan beberapa sumber data, ada banyak peluang untuk data diduplikasi atau diberi label yang salah.
     - disini kita melakukan data Cleaning untuk memeriksa apakah ada data yang kosong, lalu mendrop kolom yang tidak penting seperti mendrop Kolom Year, ini dilakukan karena kolom tahun akan berpengaruh dalam prediksi harga sehingga saya mendrop kolom tersebut dan menggantinya dengan feature engineering. 
--  **Data Visualization**. Visualisasi data adalah proses menerjemahkan kumpulan data besar dan metrik ke dalam bagan, grafik, dan visual lainnya. Dengan Visualisasi Data mempermudah membaca informasi yang banyak dan angka - angka melalui angka.                                                                                                        Insight yang saya dapatkan saat melakukan Visualisasi Data:
-    
+ 
+ ```python
+scaler=StandardScaler()
+df_scaler=scaler.fit_transform(df_new)
+df_scaler=pd.DataFrame(df_scaler,columns=df_new.columns)
+print(df_scaler.shape)
 
-    - **Total Pembelian Mobil VolkSwagen Terbanyak**
-      - Top 3 Mobil Golf, Tiguan dan juga Polo merupakan mobil yang sering digunakan pada kumpulan data dari semua mobil di VW
-      ![3 mobil terbanyak](https://raw.githubusercontent.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/main/Data%20Visualization/terbanyak.png?token=APMXFUJSMID2KDVWT6LA7ODBNFICA)
-
-    - **Jumlah Pembelian mobil tiap Tahun**
-      - jika dilihat pada tahun 2019 dan 2020 merupakan tahun yang dimana jumlah pembeli mobil VW terbanyak
-      ![peningkatan pembelian pertahun](https://user-images.githubusercontent.com/64582353/135224122-d465c32a-55d3-49ca-b48c-2f2bd6db63b8.png)
-
-    - **Pair Plot**
-      - disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
-      ![Pair Plot](https://user-images.githubusercontent.com/64582353/135224195-84e55ca4-276c-4d8e-917f-541849dbafb5.png)
-
-- **Data Preprocessing**. Pra-pemrosesan data adalah proses mengubah data mentah menjadi format yang dapat dipahami. Ini juga merupakan langkah penting dalam penambangan data karena tidak dapat bekerja dengan data mentah. Disini saya melakukan preprocessing data agar data tersebut dapat diolah dan diproses dengan baik sehingga menghindari underfit atau overfit.
+X=df_scaler.drop(columns=['price'])
+y=df_scaler['price']
+``` 
   - **Normalisasi**. Disini saya melakukan Normalisasi data agar data yang dilatih dan data yang di test akan mudah untuk mencocokan data karena memiliki nilai dan tipe data yang sama. untuk Normalisasi data saya menggunakan Stndar Scaler.
     - **StandardScaler**. StandardScaler menstandardisasi fitur dengan mengurangi mean dan kemudian menskalakan ke varians unit. Varians unit berarti membagi semua nilai dengan standar deviasi. alasan saya menggunakan StandardScaler karena tujuannya untuk memprediksi harga sehingga StandardScaler lebih baik dibandingkan MinMaxScaler yang nilainya 0 dan 1.
    - **Splitting Data Train dan Test**
       - disini saya membagi data menjadi data train dan test secara default yaitu 75% data train dan 25% data latih
    
 ## Modeling
-- Bagian Modelling saya menggunakan Linear Regression, Decision Tree Regressor dan MLP Regressor. untuk modellingnya sendiri saya membandingkan ketiga model tersebut untuk mencari model mana yang lebih baik.
-  - **Menggunakan Linear Model**. Pertama saya menggunakan Model Linear untuk mendapatkan akurasi terbaik.
-  - ![Menggunakan Linear Model](https://user-images.githubusercontent.com/64582353/135480973-cd596327-7e06-408c-80a3-714020d0414e.png)
-    - **Linear Regression(Linear)** . Saat menggunakan model Linear Regression mendapatkan akurasi yang baik yaitu sebesar 	0.929033
-    - **Decision Tree Regressor(Linear)**. Saat menggunakan model Decision Tree Regressor mendapatkan akurasi yang sangat baik yaitu sebesar 0.952657
-    - **MLP Regressor(Linear)**. Saat menggunakan model MLP Regressor mendapatkan akurasi yang baik yaitu sebesar 0.937266 
-  - **Menggunakan Polynomial Model**. Kedua saya mencoba menggunakan Model Polynomial untuk mengetahui apakah dapat menambah akurasi atau tidak. dan hasilnya dibawah:
-  - ![Menggunakan Polynomial Model](https://user-images.githubusercontent.com/64582353/135481143-de649c2f-79d3-4abb-8cf7-f784087a3d03.png)
-    - **Linear Regression(Polynomial)** . Saat menggunakan model Linear Regression mendapatkan akurasi yang baik yaitu sebesar 0.929033
-    - **Decision Tree Regressor(Polynomial)**. Saat menggunakan model Decision Tree Regressor mendapatkan akurasi yang sangat baik yaitu sebesar 0.953241
-    - **MLP Regressor(Polynomial)**. Saat menggunakan model MLP Regressor mendapatkan akurasi yang baik yaitu sebesar 0.947744 
-  - ![polynomial](https://user-images.githubusercontent.com/64582353/135227538-153e91ff-b31f-45f9-b10d-470a739f089c.png)
+- Pada Proyek yang dibuat, digunakan model algoritma *Machine Learning* yaitu **Linear Regression**,**Decision Tree Regressor**, dan **Multi Layer Perceptron Regressor**. Model tersebut dipilih dikarenakan permasalahan dari model *Machine Learning* yang dibuat adalah permasalahan regresi. hasil dari model yang dipilih akan dibandingkan berdasarkan label yang telah terpilih sebelmunya yaitu *price*. Berikut adalah potongan kode dari model tersebut.
+ ```python
+ # Dalam Bentuk Regresi
+X_train,X_test,Y_train,Y_test=train_test_split(X,y)
+def regression_model(model):
+    regressor = model
+    regressor.fit(X_train_transformed, Y_train)
+    score = regressor.score(X_test_transformed, Y_test)
+    return regressor, score 
+```
+- Lalu melihat hasil model regresi
+```python
+model_performance = pd.DataFrame(columns = ["Features", "Model", "Score"])
 
-- **DecisionTreeRegressor Model Terbaik**. Dapat dilihat Decision Tree Regressor mendapatkan hasil prediksi terbaik dan juga terbaik di keduanya (Linear dan Polynomial) karena menghasilkan prediksi sebesar 0.953241 atau 95%. dengan begitu DecisionTreeRegressor menggunakan Metode Polynomial adalah solusi terbaik.
-  
+models_to_evaluate = [LinearRegression(), RandomForestRegressor(), MLPRegressor()]
+
+for model in models_to_evaluate:
+    regressor, score = regression_model(model)
+    model_performance = model_performance.append({"Features": "Linear","Model": model, "Score": score}, ignore_index=True)
+
+model_performance
+```
+lalu sekarang melihat model dalam bentuk Polynomial untuk mencari nilai K
+```python
+poly = PolynomialFeatures()
+X_train_transformed_poly = poly.fit_transform(X_train)
+X_test_transformed_poly = poly.transform(X_test)
+
+print(X_train_transformed_poly.shape)
+
+no_of_features = []
+r_squared = []
+
+for k in range(10, 277, 5):
+    selector = SelectKBest(f_regression, k = k)
+    X_train_transformed = selector.fit_transform(X_train_transformed_poly, Y_train)
+    regressor = LinearRegression()
+    regressor.fit(X_train_transformed, Y_train)
+    no_of_features.append(k)
+    r_squared.append(regressor.score(X_train_transformed, Y_train))
+    
+sns.lineplot(x = no_of_features, y = r_squared)
+```
+|No|Features|	Model|	Score|
+|:---:|:---:|:---:|:---:|
+|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
+|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.952657|
+|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	0.937266|
+```python
+selector = SelectKBest(f_regression, k = 110)
+X_train_transformed = selector.fit_transform(X_train_transformed_poly, Y_train)
+X_test_transformed = selector.transform(X_test_transformed_poly)
+```
+lalu hasil model menggunakan polynomial
+```python
+models_to_evaluate = [LinearRegression(), RandomForestRegressor(), MLPRegressor()]
+
+for model in models_to_evaluate:
+    regressor, score = regression_model(model)
+    model_performance = model_performance.append({"Features": "Polynomial","Model": model, "Score": score}, ignore_index=True)
+
+model_performance
+```
+|No|Features|	Model|	Score|
+|:---:|:---:|:---:|:---:|
+|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
+|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.952657|
+|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	0.937266|
+|3|	Polynomial|	LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
+|4|	Polynomial|	(DecisionTreeRegressor(ccp_alpha=0.0, criterio...	| 0.953241|
+|5|	Polynomial|	MLPRegressor(activation='relu', alpha=0.0001, ...	| 0.947744|
+
+Dari Tabel dapat dilihat bahwa nilai *RF* lebih mendekati dengan nilai aslinya, sehingga model yang paling cocok adalah *Decision Tree Regressior* menggunakan Polynomial.
 ## Evaluation
 - R-Squared (coefficient of determination).
  -Disini saya menggunakan Metric Evaluation yaitu R^2_score atau R-squared. R-Squared itu sendiri adalah skor terbaik yang mungkin adalah 1,0 dan bisa negatif (karena modelnya bisa sewenang-wenang lebih buruk). Sebuah model konstan yang selalu memprediksi nilai yang diharapkan dari y, mengabaikan fitur input, akan mendapatkan skor 0,0.
@@ -173,7 +225,7 @@ Insight yang saya dapatkan saat melakukan EDA:
   - tidak dapat memberitahu apakah model tersebut overfit/underfit dan lainnya.
 - **Code**
 - untuk codenya yang diterapkan:
-```javascript
+```python
 def regression_model(model):
     regressor = model
     regressor.fit(X_train_transformed, Y_train)
