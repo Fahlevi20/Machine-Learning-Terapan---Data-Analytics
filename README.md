@@ -7,6 +7,7 @@ Project Machine Learning Terapan : membuat model Predictive Analysis, menggunaka
 Latar Belakang pemilihan topik ini adalah dikarenakan ingin melihat tingkat penjualan mobil bekas, dimana dalam kasus ini VolkSwagen, dengan fitur - fitur tertentu yang dapat berpenaguh pada nilai di pasar.
 Pentingnya bagi para pemilik mobil jika ingin menjual mobilnya perlu untuk melihat harga yang terdapat di pasaran, namun bagi para penjual cukup sulit untuk menentukan harga mobilnya agar mendapatkan harga yang sesuai keinginannya dan juga dapat terjual dengan mudah, oleh karena itu pembuatan prediksi harga yang cocok penting.
 ## Business Understanding
+ ingin melihat tingkat penjualan mobil bekas, dimana dalam kasus ini VolkSwagen, dengan fitur - fitur tertentu yang dapat berpenaguh pada nilai di pasar.
 
 ### Problem Statements
 - Bagaimana cara mengetahui fitur yang berpengaruh terhadap harga mobil?
@@ -105,6 +106,7 @@ Informasi General Dataset ...
       
    ![Pair Plot](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pairplot.jpg?raw=true)
    - disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
+   - ada grafik yg memiliki kesamaan yaitu transmission dan fueltype, lalu tax dan engineSize memiliki kesamaan.
       
 ## Data Preparation
 - Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
@@ -114,93 +116,28 @@ Proses splitting data atau pembagian dataset menjadi data latih *(train)* dan da
 #### Standardisasi
 Data numerik yang terdapat di dataset perlu dilakukannya proses **Standardisasi** sehingga menghasilkan distribusi dengan nilai standar deviasi 1 dan mean 0. Hal tersebut dilakukan dengan tujuan untuk meningkatkan peforma algoritma machine learning dan membuatnya konvergen lebih cepat selain itu menghindari overfitting dan juga data imbalance.
 
- ```python
-scaler=StandardScaler()
-df_scaler=scaler.fit_transform(df_new)
-df_scaler=pd.DataFrame(df_scaler,columns=df_new.columns)
-print(df_scaler.shape)
-
-X=df_scaler.drop(columns=['price'])
-y=df_scaler['price']
-``` 
-
 ## Modeling
 - Pada Proyek yang dibuat, digunakan model algoritma *Machine Learning* yaitu **Linear Regression**,**Decision Tree Regressor**, dan **Multi Layer Perceptron Regressor**. Model tersebut dipilih dikarenakan permasalahan dari model *Machine Learning* yang dibuat adalah permasalahan regresi. hasil dari model yang dipilih akan dibandingkan berdasarkan label yang telah terpilih sebelmunya yaitu *price*. Berikut adalah potongan kode dari model tersebut.
- ```python
- # Dalam Bentuk Regresi
-X_train,X_test,Y_train,Y_test=train_test_split(X,y)
-def regression_model(model):
-    regressor = model
-    regressor.fit(X_train_transformed, Y_train)
-    score = regressor.score(X_test_transformed, Y_test)
-    return regressor, score 
-```
+
 - Lalu melihat hasil model regresi
-```python
-model_performance = pd.DataFrame(columns = ["Features", "Model", "Score"])
 
-models_to_evaluate = [LinearRegression(), RandomForestRegressor(), MLPRegressor()]
-
-for model in models_to_evaluate:
-    regressor, score = regression_model(model)
-    model_performance = model_performance.append({"Features": "Linear","Model": model, "Score": score}, ignore_index=True)
-
-model_performance
-```
 |No|Features|	Model|	Score|
 |:---:|:---:|:---:|:---:|
-|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
-|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.952657|
-|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	0.937266|
+|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.930364|
+|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.956395|
+|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	-29.835217|
 
 
-lalu sekarang melihat model dalam bentuk Polynomial untuk mencari nilai K
-
-```python
-#polynomial
-poly = PolynomialFeatures()
-X_train_transformed_poly = poly.fit_transform(X_train)
-X_test_transformed_poly = poly.transform(X_test)
-
-print(X_train_transformed_poly.shape)
-
-no_of_features = []
-r_squared = []
-
-for k in range(10, 277, 5):
-    selector = SelectKBest(f_regression, k = k)
-    X_train_transformed = selector.fit_transform(X_train_transformed_poly, Y_train)
-    regressor = LinearRegression()
-    regressor.fit(X_train_transformed, Y_train)
-    no_of_features.append(k)
-    r_squared.append(regressor.score(X_train_transformed, Y_train))
-    
-sns.lineplot(x = no_of_features, y = r_squared)
-```
-
-```python
-selector = SelectKBest(f_regression, k = 110)
-X_train_transformed = selector.fit_transform(X_train_transformed_poly, Y_train)
-X_test_transformed = selector.transform(X_test_transformed_poly)
-```
 lalu hasil model menggunakan polynomial
-```python
-models_to_evaluate = [LinearRegression(), RandomForestRegressor(), MLPRegressor()]
 
-for model in models_to_evaluate:
-    regressor, score = regression_model(model)
-    model_performance = model_performance.append({"Features": "Polynomial","Model": model, "Score": score}, ignore_index=True)
-
-model_performance
-```
 |No|Features|	Model|	Score|
 |:---:|:---:|:---:|:---:|
-|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
-|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.952657|
-|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	0.937266|
-|3|	Polynomial|	LinearRegression(copy_X=True, fit_intercept=Tr... |	0.929033|
-|4|	Polynomial|	(DecisionTreeRegressor(ccp_alpha=0.0, criterio...	| 0.953241|
-|5|	Polynomial|	MLPRegressor(activation='relu', alpha=0.0001, ...	| 0.947744|
+|0|	Linear	|LinearRegression(copy_X=True, fit_intercept=Tr... |	0.930364|
+|1|	Linear	|(DecisionTreeRegressor(ccp_alpha=0.0, criterio... |	0.956395|
+|2|	Linear	|MLPRegressor(activation='relu', alpha=0.0001, ... |	-29.835217|
+|3|	Polynomial|	LinearRegression(copy_X=True, fit_intercept=Tr... |	0.930364|
+|4|	Polynomial|	(DecisionTreeRegressor(ccp_alpha=0.0, criterio...	| 0.956410|
+|5|	Polynomial|	MLPRegressor(activation='relu', alpha=0.0001, ...	| -2.941278|
 
 Dari Tabel dapat dilihat bahwa nilai *RF* lebih mendekati dengan nilai aslinya, sehingga model yang paling cocok adalah *Decision Tree Regressior* menggunakan Polynomial.
 ## Evaluation
@@ -216,7 +153,5 @@ Dari Tabel dapat dilihat bahwa nilai *RF* lebih mendekati dengan nilai aslinya, 
 - **Kekurangan**
   - tidak menunjukan apakah regresi yang benar digunakan
   - tidak dapat memberitahu apakah model tersebut overfit/underfit dan lainnya.
-- **Code**
-- untuk codenya yang diterapkan:
 
 - Dengan menggunakan R2_score dapat memberikan hasil yang baik sebsar 0.953241
