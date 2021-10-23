@@ -5,14 +5,15 @@
 Project Machine Learning Terapan : membuat model Predictive Analysis, menggunakan dataset yang berdomain ekonomi mengenai prediksi harga mobil VolkSwagen.
 ### Latar Belakang
 Latar Belakang pemilihan topik ini adalah dikarenakan ingin melihat tingkat penjualan mobil bekas, dimana dalam kasus ini VolkSwagen, dengan fitur - fitur tertentu yang dapat berpenaguh pada nilai di pasar.
-
-## Business Understanding
 Pentingnya bagi para pemilik mobil jika ingin menjual mobilnya perlu untuk melihat harga yang terdapat di pasaran, namun bagi para penjual cukup sulit untuk menentukan harga mobilnya agar mendapatkan harga yang sesuai keinginannya dan juga dapat terjual dengan mudah, oleh karena itu pembuatan prediksi harga yang cocok penting.
+## Business Understanding
+
 ### Problem Statements
--Berapa harga mobil bekas dengan jenis transmisi, jarak tempuh dan ukuran mesin yang ditentukan?
-- berdasarkan karakteristik yang tersedia manakan yang paling berpengaruh?
+- Bagaimana cara mengetahui fitur yang berpengaruh terhadap harga mobil?
+- Bagaimana cara menentukan harga mobil dengan data yang ada?
 ### Goals
-ingin membuat model Machine Learning yang dapat memberikan prediksi harga mobil bekas VolkSwagen dengan harga terbaik dan menggunakan karaktersitik yang tersedia.
+- Mengetahui fitur(karakteristik) yang berpengaruh terhadap harga mobil.
+- Mengetahui cara untuk menentukan harga mobil dengan menggunakan model machine learning.
 ### Solution statements
 Solusi model yang kami berikan menggunakan Linear dan Polynomial, karena dengan metode tersebut cocok untuk melakukan prediksi terkait harga. 
 Untuk model yang digunakan :
@@ -27,15 +28,15 @@ Untuk mengunduh Dataset dapat mengunjungi link berikut [Kaggle Dataset](https://
 Disini menggunakan [*100,000 UK Used Car Data set*](https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes?select=cclass.csv) dari situs Kaggle yang berisi data tentang mobil bekas yang terjual di UK dengan variable, mileage, model, engineSize, year, transmission, fuelType, dan price yang menjadi label pada data ini. Dataset ini berisi  3899 dengan 7 kolom dengan 2 kategorikal dan 5 numerikal.
  
 Variabel - variabel yang terdapat di Dataset vw (Volkswagen Dataset) :
-- model = Volswagen Model(T-Rock, Golf, Polo, T-Cross, Tiguan, Caddy, Etc..)
-- year = Registration Year
-- price = Price in Pound Britania (£)
-- transmission = type of gearbox (Automatic, Manual and Semi-Auto)
-- mileage = distance used
-- fuelType = Engine Fuel (Diesel, Petrol, Hybird and Other)
-- tax = Road Tax
-- mpg = Miles per Galon
-- engineSize= size in litres
+- model = Volswagen Model(T-Rock, Golf, Polo, T-Cross, Tiguan, Caddy, Etc..). Model mobil Voklswagen
+- year = Registration Year (Tahun Registrasi)
+- price = Price in Pound Britania (£) (Harga mobil dalam Pound Britania (£))
+- transmission = type of gearbox (Automatic, Manual and Semi-Auto) ( Tipe Gearbox mobil)
+- mileage = distance used (penggunaan jarak)
+- fuelType = Engine Fuel (Diesel, Petrol, Hybird and Other) (Tipe Bensin)
+- tax = Road Tax (Pajak jalan)
+- mpg = Miles per Galon (mil per galon)
+- engineSize= size in litres (ukuran dalam liter)
 
 Data Loading sebagai berikut
 
@@ -103,6 +104,7 @@ Informasi General Dataset ...
     disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
       
    ![Pair Plot](https://github.com/Fahlevi20/Machine-Learning-Terapan---Data-Analytics/blob/main/Data%20Visualization/pairplot.jpg?raw=true)
+   - disini saya menggunakan pairplot untuk melihat grafik mana yang memiliki kesamaan sehingga akan mempermudah untuk melakukan prediksi
       
 ## Data Preparation
 - Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
