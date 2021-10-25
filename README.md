@@ -18,13 +18,22 @@ Pentingnya bagi para pemilik mobil jika ingin menjual mobilnya perlu untuk melih
 ### Solution statements
 Solusi model yang kami berikan menggunakan Linear dan Polynomial, karena dengan metode tersebut cocok untuk melakukan prediksi terkait harga. 
 Untuk model yang digunakan :
-- **Linear Model**. Model linier adalah cara untuk menggambarkan variabel respon dalam hal kombinasi linier variabel prediktor. Respon harus berupa variabel kontinu dan paling tidak terdistribusi secara normal. 
-- **Polynomial Model**. Model polinomial adalah alat yang hebat untuk menentukan faktor input mana yang mendorong respons dan ke arah mana. Ini juga merupakan model yang paling umum digunakan untuk analisis eksperimen yang dirancang. Model polinomial kuadratik (orde kedua) untuk dua variabel penjelas memiliki bentuk persamaan di bawah ini. 
-- **LinearRegression**. Linear Regression cocok dengan model linier dengan koefisien w = (w1, …, wp) untuk meminimalkan jumlah sisa kuadrat antara target yang diamati dalam                             kumpulan data, dan target yang diprediksi oleh pendekatan linier. 
-- **DecisionTreeRegressor**. Decision Tree Regressor. Decision Tree membangun model regresi atau klasifikasi dalam bentuk struktur pohon. Ini memecah dataset menjadi subset yang lebih kecil dan lebih kecil sementara pada saat yang sama pohon keputusan terkait dikembangkan secara bertahap. Hasil akhirnya adalah pohon dengan simpul keputusan dan simpul daun. 
+- **Linear Model**. Model linier adalah cara untuk menggambarkan variabel respon dalam hal kombinasi linier variabel prediktor. Respon harus berupa variabel kontinu dan paling tidak terdistribusi secara normal.
+  - **Kelebihan** Sangat baik untuk model prediksi model regresi terutama dalam mengidentifikasi sekuat apa pengurah yang diberikan oleh variabel independen.
+  - **Kekurangan** karena hasil ramalan dari analisis regresi merupakan nilai estimasi, sehingga kemungkinan untuk tidak sesuai dengan data aktual tetaplah ada.
+- **Polynomial Model**. Model polinomial adalah alat yang hebat untuk menentukan faktor input mana yang mendorong respons dan ke arah mana. Ini juga merupakan model yang paling umum digunakan untuk analisis eksperimen yang dirancang. Model polinomial kuadratik (orde kedua) untuk dua variabel penjelas.
+  - **Kelebihan** dapat fit dengan data karena menyesuaikan garis lemgkungan berdasarkan derajat yang ditentukan.
+  - **Kekurangan** mudah juga untuk mendapatkan overfitting.
+- **LinearRegression**. Linear Regression cocok dengan model linier dengan koefisien w = (w1, …, wp) untuk meminimalkan jumlah sisa kuadrat antara target yang diamati dalam                             kumpulan data, dan target yang diprediksi oleh pendekatan linier.
+  - **Kelebihan** sangat baik untuk model yang memiliki dimensi yg banyak seperti pada dataset titanic dan lainnya dan juga sangat baik untuk kasus regresi.
+  - **Kekurangan** data-data yang diukur harus linear untuk memperoleh hasil yang baik
+- **DecisionTreeRegressor**. Decision Tree Regressor. Decision Tree membangun model regresi atau klasifikasi dalam bentuk struktur pohon. Ini memecah dataset menjadi subset yang lebih kecil dan lebih kecil sementara pada saat yang sama pohon keputusan terkait dikembangkan secara bertahap. Hasil akhirnya adalah pohon dengan simpul keputusan dan simpul daun.
+  - **Kelebihan** Bagus untuk klasifikasi dengan jumlah dimensi yang sedikit tetapi karena regressor sehingga dapat menklasifikasi untuk permasalahan regresi.
+  - **Kekurangan** Kurang baik untuk klasifikasi dalam jumlah dimensi yang banyak.  
 - **MLPRegressor**. Multi Layer Perceiptron Regressor. Model ini mengoptimalkan kesalahan kuadrat menggunakan LBFGS atau penurunan gradien stokastik.
+  - **Kelebihan** Sangat bagus untuk klasifikasi dengan jumlah dimensi yang banyak tetapi karena regressor sehingga dapat menklasifikasi untuk permasalahan regresi.
+  - **Kekurangan** Memiliki banyak kelemahan untuk permasalahan kasus regresi karena MLP lebih baik pada kasus klasifikasi.
 ## Data Understanding
- 
 Untuk mengunduh Dataset dapat mengunjungi link berikut [Kaggle Dataset](https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes).
 Disini menggunakan [*100,000 UK Used Car Data set*](https://www.kaggle.com/adityadesai13/used-car-dataset-ford-and-mercedes?select=cclass.csv) dari situs Kaggle yang berisi data tentang mobil bekas yang terjual di UK dengan variable, mileage, model, engineSize, year, transmission, fuelType, dan price yang menjadi label pada data ini. Dataset ini berisi  3899 dengan 7 kolom dengan 2 kategorikal dan 5 numerikal.
  
@@ -109,7 +118,10 @@ Informasi General Dataset ...
    - ada grafik yg memiliki kesamaan yaitu transmission dan fueltype, lalu tax dan engineSize memiliki kesamaan.
       
 ## Data Preparation
-- Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
+- Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan encoding pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
+#### Encoding
+Proses encoding atau mengubah data categorikal menjadi 0 dan 1 seperti data pada kolom model, transmission dan fuelType yang datanya didalamnya dipisah kembali menjadi 0 dan 1.
+
 #### Train-Test Split
 Proses splitting data atau pembagian dataset menjadi data latih *(train)* dan data uji *(test)* merupakan hal yang harus dilakukan sebelum melakukan pemodelan supervised. Hal ini karena data uji berperan sebagai data baru yang benar-benar belum pernah dilihat oleh model sebelumnya sehingga informasi yang terdapat pada data uji tidak mengotori informasi yang terdapat pada data latih, alasan lain mengapa menggunakan *train test split* karena untuk efisiensi dan tidak melakukan *data leakage* ketika melakukan scaling. 
 
