@@ -118,7 +118,7 @@ Informasi General Dataset ...
    - ada grafik yg memiliki kesamaan yaitu transmission dan fueltype, lalu tax dan engineSize memiliki kesamaan.
       
 ## Data Preparation
-- Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan encoding pemisahan data antara data latih dan test lalu melakukan scaling untuk data categorical agar data dapat dilatih.
+- Sebelum datasetnya di latih atau training, dari model sebelumnya perlu melakukan encoding lalu pemisahan data antara data latih dan test setelah itu melakukan scaling untuk data categorical agar data dapat dilatih.
 #### Encoding
 Proses encoding atau mengubah data categorikal menjadi 0 dan 1 seperti data pada kolom model, transmission dan fuelType yang datanya didalamnya dipisah kembali menjadi 0 dan 1.
 
